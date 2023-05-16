@@ -28,7 +28,7 @@ async def search(bot, message):
                results += f"<b>♻️ {name}\n🔗 {msg.link}</b>\n\n"                                                      
        if bool(results)==False:
           movies = await search_imdb(query)
-          buttons = [How]
+          buttons = []
           for movie in movies: 
               buttons.append([InlineKeyboardButton(movie['title'], callback_data=f"recheck_{movie['id']}")])
           msg = await message.reply_photo(photo="https://telegra.ph/file/cf6706158b0bfaf436f54.jpg",
