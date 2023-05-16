@@ -17,7 +17,7 @@ async def search(bot, message):
     if message.text.startswith("/"):
        return    
     query   = message.text 
-    head    = "<u>\nHere Is The Results.\n\n"
+    head    = "\nHere Is The Results.\n\n"
     results = ""
     try:
        for channel in channels:
@@ -28,7 +28,7 @@ async def search(bot, message):
                results += f"<b><I>♻️ {name}\n🔗 {msg.link}</I></b>\n\n"                                                      
        if bool(results)==False:
           movies = await search_imdb(query)
-          buttons = []
+          buttons = [[How to Download Offline](buttonurl:https://t.me/FreeFlix18/149)]
           for movie in movies: 
               buttons.append([InlineKeyboardButton(movie['title'], callback_data=f"recheck_{movie['id']}")])
           msg = await message.reply_photo(photo="https://telegra.ph/file/cf6706158b0bfaf436f54.jpg",
